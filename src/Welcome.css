@@ -1,0 +1,70 @@
+
+.welcome-hero {
+  background: linear-gradient(180deg, #0b3d91 0%, #0b3d91 100%);
+  color: #fff;
+  padding-top: 90px; /* offset for sticky navbar */
+}
+
+/* On small screens, the navbar height is slightly larger; increase offset */
+@media (max-width: 767px) {
+  .welcome-hero { padding-top: 110px }
+}
+
+/* pipeline hero uses a background image placed in public/download.jpeg */
+.pipeline-hero {
+  /* background image set inline in the component via process.env.PUBLIC_URL */
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  color: #fff;
+}
+.pipeline-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(11,61,145,0.55); /* bluish overlay for readability */
+  z-index: 0;
+}
+.pipeline-hero .container,
+.pipeline-hero .row,
+.pipeline-hero .col,
+.pipeline-hero h1,
+.pipeline-hero p,
+.pipeline-hero .btn {
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-hero .lead { color: rgba(255,255,255,0.9); max-width: 56ch }
+
+.welcome-features { background:#f8f9fa }
+
+.navbar-brand img { margin-right: 8px }
+
+.welcome-footer { font-size:14px; color:#666 }
+
+/* Pipeline contact card typography tweaks */
+.pipeline-contact .card .card-title {
+  font-size: 1.5rem; /* larger title */
+}
+.pipeline-contact .card .card-text,
+.pipeline-contact .card ul {
+  font-size: 1.125rem; /* slightly larger body text */
+}
+
+/* Visual polish for pipeline contact cards */
+.pipeline-contact .card {
+  box-shadow: 0 6px 18px rgba(13, 38, 76, 0.08);
+  border-radius: 8px;
+}
+
+.pipeline-contact .card .material-cta {
+  min-width: 220px;
+}
+
+@media (max-width: 767px) {
+  .pipeline-contact .card .material-cta {
+    width: 100%;
+    display: block;
+  }
+}
