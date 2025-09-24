@@ -83,7 +83,7 @@ export default function Welcome() {
             <Col md={4}>
               <Card className="h-100 text-center p-3">
                 <Card.Body>
-                  <Card.Title>Fabrication</Card.Title>
+                  <Card.Title>Construction Material Supplies</Card.Title>
                   <Card.Text>Custom pipe fabrication and welding to project specs.</Card.Text>
                 </Card.Body>
               </Card>
