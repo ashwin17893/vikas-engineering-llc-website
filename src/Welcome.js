@@ -16,7 +16,7 @@ export default function Welcome() {
     <div className="welcome-root">
       <Navbar bg="dark" variant="dark" expand="lg" className="py-2" sticky="top">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="#">
             <img
               alt="logo"
               src={logo}
