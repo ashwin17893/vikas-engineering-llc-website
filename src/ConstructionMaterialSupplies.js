@@ -138,7 +138,7 @@ export default function ConstructionMaterialSupplies() {
                     <strong>Vikas Engineering</strong> offers quick access to expertise and materials.
                   </Card.Text>
                   <Card.Text>
-                    <strong>Phone:</strong> <a href="tel:8778530130">877-853-0130</a>
+                    <strong>Phone:</strong> <a href="tel:1234567890">123-456-7890</a>
                   </Card.Text>
                 </Card.Body>
                 <Card.Footer className="bg-white border-0 text-center">
