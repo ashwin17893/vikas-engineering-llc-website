@@ -96,6 +96,21 @@ export default function ConstructionMaterialSupplies() {
         </Container>
       </header>
 
+      <section className="py-4">
+        <Container>
+          <Row className="justify-content-center">
+            <Col md={10} lg={8}>
+              <Card className="text-center shadow-sm wide-card">
+                <Card.Body className="wide-card-inner">
+                  <Card.Title className="h4">Pipes, Fittings & Flanges</Card.Title>
+                  <Card.Text className="mb-0">Premium quality pipeline components for various applications</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
       <section className="welcome-features py-5">
         <Container>
           <Row className="g-4">

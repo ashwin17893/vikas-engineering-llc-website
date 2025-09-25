@@ -79,30 +79,43 @@ export default function Welcome() {
 
       <section className="welcome-features py-5">
         <Container>
+          <Row className="mb-4">
+            <Col className="text-center">
+              <h2 className="fw-bold">Our Products</h2>
+              <p className="text-muted mb-0">High-quality materials for all your construction needs</p>
+            </Col>
+          </Row>
           <Row className="g-4">
             <Col md={4}>
               <Card className="h-100 text-center p-3">
                 <Card.Body>
-                  <Card.Title>Construction Material Supplies</Card.Title>
-                  <Card.Text>Custom pipe fabrication and welding to project specs.</Card.Text>
+                  <Card.Title>Pipes, Fittings & Flanges</Card.Title>
+                  <Card.Text>Premium quality products that meet industry standards and specifications..</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
             <Col md={4}>
               <Card className="h-100 text-center p-3">
                 <Card.Body>
-                  <Card.Title>Logistics</Card.Title>
-                  <Card.Text>Coordinated delivery and on-site support.</Card.Text>
+                  <Card.Title>Couplings</Card.Title>
+                  <Card.Text>Reliable connections ensuring leak-free performance in demanding environments.</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
             <Col md={4}>
               <Card className="h-100 text-center p-3">
                 <Card.Body>
-                  <Card.Title>Inspection</Card.Title>
-                  <Card.Text>Don’t compromise on quality — full inspection services.</Card.Text>
+                  <Card.Title>Valves</Card.Title>
+                  <Card.Text>High-performance valves engineered for precision and durability in critical applications.</Card.Text>
                 </Card.Body>
               </Card>
+            </Col>
+          </Row>
+        </Container>
+        <Container className="text-center mt-4">
+          <Row>
+            <Col>
+              <Button as={Link} to="/construction-material-supplies" variant="warning" size="lg">See our products</Button>
             </Col>
           </Row>
         </Container>

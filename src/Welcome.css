@@ -39,6 +39,8 @@
 
 .welcome-features { background:#f8f9fa }
 
+/* product-grid removed; replaced with Card in ConstructionMaterialSupplies */
+
 .navbar-brand img { margin-right: 8px }
 
 .welcome-footer { font-size:14px; color:#666 }
@@ -66,5 +68,27 @@
   .pipeline-contact .card .material-cta {
     width: 100%;
     display: block;
+  }
+}
+
+/* Make the product card wider by ~2in on either side on large screens */
+/* Convert 2in to pixels for more consistent cross-device behavior (approx 192px at 96dpi) */
+@media (min-width: 992px) {
+  .wide-card {
+    margin-left: -160px; /* narrower widen amount */
+    margin-right: -160px;
+    max-width: calc(100% + 320px);
+    border: none;
+    background: transparent; /* inner element will carry visual style */
+  }
+  .wide-card .wide-card-inner {
+    background: linear-gradient(180deg, #0b3d91 0%, #0b3d91 100%);
+    color: #fff;
+    padding: 1.5rem 1.25rem;
+    border-radius: 8px;
+  }
+  .wide-card .wide-card-inner .card-title,
+  .wide-card .wide-card-inner .card-text {
+    color: #fff;
   }
 }
