@@ -63,8 +63,8 @@ export default function Welcome() {
         <Container className="py-5">
           <Row className="align-items-center">
             <Col md={7}>
-              <h1 className="display-5 fw-bold">High‑quality piping solutions, delivered.</h1>
-              <p className="lead">End-to-end supply and fabrication for industrial and municipal projects.</p>
+              <h1 className="display-5 fw-bold">High‑quality construction materials, delivered.</h1>
+              <p className="lead">End-to-end supply for industrial and municipal projects.</p>
               <div className="d-flex gap-2">
                 <Button variant="warning" size="lg">Get a Quote</Button>
                 <Button variant="outline-light" size="lg">Learn More</Button>
