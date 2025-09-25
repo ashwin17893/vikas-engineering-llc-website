@@ -2,13 +2,18 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]  # change if your default branch is different
+    branches: [ main ]  # change if your code branch is different
+
+permissions:
+  contents: write   # allows pushing to gh-pages
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # safer for publishing commits
 
       - uses: actions/setup-node@v4
         with:
@@ -16,12 +21,16 @@ jobs:
           cache: 'npm'
 
       - run: npm ci
-      - run: npm run build
+        # If npm ci fails due to lock mismatch, try:  npm install
+
+      # CRA + CI=true => warnings become errors. Disable that:
+      - run: CI=false npm run build
+
       - run: touch build/.nojekyll
 
-      # Deploy the build/ folder to gh-pages
+      # Publish to gh-pages and keep your custom domain
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
-          cname: www.vikasengineerings.com  # keeps your custom domain on every deploy
+          cname: www.vikasengineerings.com
