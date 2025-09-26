@@ -108,6 +108,21 @@
   }
 }
 
+/* Default (mobile & tablet) visual for wide-card inner strip so it shows the blue
+   background on smaller viewports as well. Larger screens override these values
+   above in the min-width:992px media query for a more expansive layout. */
+.wide-card .wide-card-inner {
+  background: linear-gradient(180deg, #0b3d91 0%, #0b3d91 100%);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.wide-card .wide-card-inner .card-title,
+.wide-card .wide-card-inner .card-text {
+  color: #fff;
+}
+
 /* Interactive highlight for feature cards */
 .welcome-features .card {
   transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
