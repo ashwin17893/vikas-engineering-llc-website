@@ -89,10 +89,10 @@ export default function About() {
                 <Card.Text>Request a quote or ask a product question — our sales team will respond quickly.</Card.Text>
                 <address className="small text-muted mb-2">
                   Vikas pipe and Fittings<br />
-                  123 Industrial Road<br />
-                  City, State ZIP<br />
+                  1601 Ohio Dr SW<br />
+                  Washington DC, 20004<br />
                 </address>
-                <p className="mb-1 small">Phone: <a className="text-decoration-none" href="tel:1234567890">123-456-7890</a></p>
+                <p className="mb-1 small">Phone: <a className="text-decoration-none" href="tel:12028678692">202-867-8692</a></p>
                 <p className="small">Email: <a className="text-decoration-none" href="mailto:sales@vikaspipeandfittings.com">sales@vikaspipeandfittings.com</a></p>
                 <Button variant="primary" onClick={() => setShowContact(true)}>Contact</Button>
               </Card.Body>

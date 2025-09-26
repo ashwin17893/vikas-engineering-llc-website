@@ -35,10 +35,10 @@ export default function Footer() {
             <h6 className="fw-bold">Contact</h6>
             <address className="small text-light">
               Vikas pipe and Fittings<br />
-              123 Industrial Road<br />
-              City, State ZIP<br />
+              1601 Ohio Dr SW<br />
+              Washington DC, 20004<br />
             </address>
-            <p className="mb-1 small">Phone: <a className="text-light" href="tel:1234567890">123-456-7890</a></p>
+            <p className="mb-1 small">Phone: <a className="text-light" href="tel:1234567890">202-867-8692</a></p>
             <p className="small">Email: <a className="text-light" href="mailto:sales@vikaspipeandfittings.com">sales@vikaspipeandfittings.com</a></p>
           </Col>
         </Row>
