@@ -1,13 +1,15 @@
 import React from 'react';
-import { Container, Navbar, Nav, Button, Row, Col, Card, NavDropdown, Form, FormControl, Carousel } from 'react-bootstrap';
+import { Container, Navbar, Nav, Button, Row, Col, Card, NavDropdown, Carousel } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
 import { useState } from 'react';
 import ContactModal from './ContactModal';
 import './Welcome.css';
-import logo from './logo.svg';
+import logo from './logo1.png';
 import car1 from './car1.png';
 import car2 from './car2.png';
 import car3 from './car3.png';
+import welcomeBg from './welcomePage.png';
 
 export default function Welcome() {
   const [showContact, setShowContact] = useState(false);
@@ -16,7 +18,7 @@ export default function Welcome() {
     <div className="welcome-root">
       <Navbar bg="dark" variant="dark" expand="lg" className="py-2" sticky="top">
         <Container>
-          <Navbar.Brand href="#">
+          <Navbar.Brand as={Link} to="/">
             <img
               alt="logo"
               src={logo}
@@ -24,13 +26,13 @@ export default function Welcome() {
               height="36"
               className="d-inline-block align-top"
             />{' '}
-            Vikas Engineering
+            Vikas Piping and Fittings
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar-nav" />
           <Navbar.Collapse id="navbar-nav">
             <Nav className="me-auto">
               <NavDropdown title="Services" id="nav-dropdown-services">
-                <NavDropdown.Item as={Link} to="/construction-material-supplies">Construction Material Supplies</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/construction-material-supplies">Piping and Fitting catalog</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/engineering-services">Engineering Services</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item as={Link} to="/legal">Legal</NavDropdown.Item>
@@ -48,31 +50,33 @@ export default function Welcome() {
                 <NavDropdown.Item as={Link} to="/legal">Legal</NavDropdown.Item>
               </NavDropdown>
             </Nav>
-            <Form className="d-flex me-2" role="search">
-              <FormControl type="search" placeholder="Search" className="me-2" aria-label="Search" />
-              <Button variant="outline-light">Search</Button>
-            </Form>
+            {/* search removed */}
             <Button variant="warning" className="ms-1" onClick={() => setShowContact(true)}>Contact</Button>
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
-      <ContactModal show={showContact} onHide={() => setShowContact(false)} />
+  <ContactModal show={showContact} onHide={() => setShowContact(false)} />
 
-      <header className="welcome-hero py-5">
-        <Container className="py-5">
+      <header className="welcome-hero py-5" style={{
+        backgroundImage: `url(${welcomeBg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        position: 'relative',
+        color: '#fff'
+      }}>
+        <div style={{position: 'absolute', inset: 0, background: 'rgba(11,61,145,0.55)'}} />
+        <Container className="py-5" style={{position: 'relative', zIndex: 1}}>
           <Row className="align-items-center">
             <Col md={7}>
-              <h1 className="display-5 fw-bold">High‑quality construction materials, delivered.</h1>
+              <h1 className="display-5 fw-bold">High‑quality piping and fitting materials, delivered.</h1>
               <p className="lead">End-to-end supply for industrial and municipal projects.</p>
               <div className="d-flex gap-2">
-                <Button variant="warning" size="lg">Get a Quote</Button>
-                <Button variant="outline-light" size="lg">Learn More</Button>
+                <Button variant="warning" size="lg" onClick={() => setShowContact(true)}>Get a Quote</Button>
+                <Button as={Link} to="/construction-material-supplies" variant="outline-light" size="lg">Learn More</Button>
               </div>
             </Col>
-            <Col md={5} className="d-none d-md-block">
-              <img src={logo} alt="illustration" className="img-fluid rounded" />
-            </Col>
+            {/* right-side illustration removed to let the hero background show */}
           </Row>
         </Container>
       </header>
@@ -89,7 +93,7 @@ export default function Welcome() {
             <Col md={4}>
               <Card className="h-100 text-center p-3">
                 <Card.Body>
-                  <Card.Title>Pipes, Fittings & Flanges</Card.Title>
+                  <Card.Title className="fw-bold">Pipes, Fittings & Flanges</Card.Title>
                   <Card.Text>Premium quality products that meet industry standards and specifications..</Card.Text>
                 </Card.Body>
               </Card>
@@ -97,7 +101,7 @@ export default function Welcome() {
             <Col md={4}>
               <Card className="h-100 text-center p-3">
                 <Card.Body>
-                  <Card.Title>Couplings</Card.Title>
+                  <Card.Title className="fw-bold">Couplings</Card.Title>
                   <Card.Text>Reliable connections ensuring leak-free performance in demanding environments.</Card.Text>
                 </Card.Body>
               </Card>
@@ -105,7 +109,7 @@ export default function Welcome() {
             <Col md={4}>
               <Card className="h-100 text-center p-3">
                 <Card.Body>
-                  <Card.Title>Valves</Card.Title>
+                  <Card.Title className="fw-bold">Valves</Card.Title>
                   <Card.Text>High-performance valves engineered for precision and durability in critical applications.</Card.Text>
                 </Card.Body>
               </Card>
@@ -149,9 +153,7 @@ export default function Welcome() {
         </Container>
       </section>
 
-      <footer className="welcome-footer py-3 bg-light text-center">
-        <Container>© {new Date().getFullYear()} Vikas Engineering LLC</Container>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -74,21 +74,78 @@
 /* Make the product card wider by ~2in on either side on large screens */
 /* Convert 2in to pixels for more consistent cross-device behavior (approx 192px at 96dpi) */
 @media (min-width: 992px) {
+  /* Responsive widening: use a viewport-relative value but clamp to a sensible pixel max
+     --wide-offset will be the amount the card extends to each side (positive number). */
   .wide-card {
-    margin-left: -160px; /* narrower widen amount */
-    margin-right: -160px;
-    max-width: calc(100% + 320px);
+    --wide-offset: min(160px, 10vw);
+    margin-left: calc(-1 * var(--wide-offset));
+    margin-right: calc(-1 * var(--wide-offset));
+    max-width: calc(100% + (2 * var(--wide-offset)));
     border: none;
-    background: transparent; /* inner element will carry visual style */
+    background: transparent; /* inner element carries the visual style */
+    overflow: visible;
   }
+
+  /* Tweak inner visual strip: responsive padding and rounded corners for better balance */
   .wide-card .wide-card-inner {
     background: linear-gradient(180deg, #0b3d91 0%, #0b3d91 100%);
     color: #fff;
-    padding: 1.5rem 1.25rem;
-    border-radius: 8px;
+    padding: clamp(1rem, 2.5vw, 2rem); /* grows slightly with viewport */
+    border-radius: clamp(6px, 1vw, 12px);
   }
+
   .wide-card .wide-card-inner .card-title,
   .wide-card .wide-card-inner .card-text {
     color: #fff;
   }
+
+  /* For the `.py-4` section make the strip a touch wider responsively (adds ~0-48px extra depending on viewport) */
+  .py-4 .wide-card {
+    --section-extra: min(48px, 2.5vw);
+    margin-left: calc(-1 * (var(--wide-offset) + var(--section-extra)));
+    margin-right: calc(-1 * (var(--wide-offset) + var(--section-extra)));
+    max-width: calc(100% + (2 * (var(--wide-offset) + var(--section-extra))));
+  }
 }
+
+/* Interactive highlight for feature cards */
+.welcome-features .card {
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  will-change: transform, box-shadow;
+}
+
+.welcome-features .card:focus {
+  outline: none;
+  box-shadow: 0 6px 20px rgba(11,61,145,0.12);
+  transform: translateY(-4px);
+}
+
+.welcome-features .card.feature-selected {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(11,61,145,0.14);
+  border-color: rgba(11,61,145,0.12);
+}
+
+.welcome-features .card[role="button"] {
+  cursor: pointer;
+}
+
+/* Make the active/selected title slightly more prominent */
+.welcome-features .card.feature-selected .card-title {
+  text-decoration: underline;
+}
+
+
+/* Highlight on hover as well (primary interaction) while preserving keyboard focus behavior */
+.welcome-features .card:hover,
+.welcome-features .card:focus-visible {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(11,61,145,0.14);
+  border-color: rgba(11,61,145,0.12);
+}
+
+.welcome-features .card:hover .card-title,
+.welcome-features .card:focus-visible .card-title {
+  text-decoration: underline;
+}
+
