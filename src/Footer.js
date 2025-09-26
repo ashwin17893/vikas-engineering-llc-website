@@ -38,7 +38,7 @@ export default function Footer() {
               1601 Ohio Dr SW<br />
               Washington DC, 20004<br />
             </address>
-            <p className="mb-1 small">Phone: <a className="text-light" href="tel:1234567890">202-867-8692</a></p>
+            <p className="mb-1 small">Phone: <a className="text-light" href="tel:+12028678692">202-867-8692</a></p>
             <p className="small">Email: <a className="text-light" href="mailto:sales@vikaspipeandfittings.com">sales@vikaspipeandfittings.com</a></p>
           </Col>
         </Row>

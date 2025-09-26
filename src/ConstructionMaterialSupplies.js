@@ -92,7 +92,8 @@ export default function ConstructionMaterialSupplies() {
                     <Card.Body>
                       <Card.Title className="h6">Call to discuss construction materials</Card.Title>
                       <Card.Text className="mb-2">Vikas Engineering offers quick access to expertise and materials.</Card.Text>
-                      <Card.Text><strong>Phone:</strong> <a href="tel:1234567890">123-456-7890</a></Card.Text>
+                      <Card.Text><strong>Phone:</strong> <a href="tel:+12028678692">202-867-8692</a></Card.Text>
+                      <Card.Text><strong>Email:</strong> <a href="mailto:sales@vikaspipeandfittings.com">sales@vikaspipeandfittings.com</a></Card.Text>
                       <div className="d-flex">
                         <Button variant="secondary" size="sm" className="me-2" onClick={() => setShowSalesCard(false)}>Close</Button>
                         <Button variant="warning" size="sm" onClick={() => {
