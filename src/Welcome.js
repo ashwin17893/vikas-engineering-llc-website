@@ -32,7 +32,7 @@ export default function Welcome() {
           <Navbar.Collapse id="navbar-nav">
             <Nav className="me-auto">
               <NavDropdown title="Services" id="nav-dropdown-services">
-                <NavDropdown.Item as={Link} to="/construction-material-supplies">Piping and Fitting catalog</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/construction-material-supplies">Pipes and Fittings catalog</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/engineering-services">Engineering Services</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item as={Link} to="/legal">Legal</NavDropdown.Item>

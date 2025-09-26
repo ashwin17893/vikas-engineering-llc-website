@@ -11,7 +11,7 @@ export default function Footer() {
         <Row className="gy-4">
           <Col md={4}>
             <h5 className="text-uppercase fw-bold">About Vikas Engineering</h5>
-            <p className="small text-light">We provide High-quality construction materials and engineering services for industrial and municipal projects.</p>
+            <p className="small text-light">We Provide High-quality piping materials, fittings and engineering services for industrial and municipal projects.</p>
           </Col>
           <Col md={2}>
             <h6 className="fw-bold">Quick Links</h6>

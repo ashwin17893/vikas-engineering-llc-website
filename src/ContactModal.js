@@ -89,6 +89,15 @@ export default function ContactModal({ show, onHide, initialMessage }) {
       return;
     }
 
+    // Validate builtin HTML constraints (email, required phone, etc.) before proceeding
+    // reportValidity() shows native validation UI; checkValidity() returns boolean.
+    if (typeof e.target.checkValidity === 'function' && !e.target.checkValidity()) {
+      // show native validation hints
+      if (typeof e.target.reportValidity === 'function') e.target.reportValidity();
+      setSubmitting(false);
+      return;
+    }
+
     // If challenge not yet shown, generate and show it
     if (!showChallenge) {
       setChallenge(randomWord(5));
@@ -151,6 +160,20 @@ export default function ContactModal({ show, onHide, initialMessage }) {
             <div className="mb-3">
               <label htmlFor="contactEmail" className="form-label">Email</label>
               <input id="contactEmail" name="email" className="form-control" type="email" required />
+            </div>
+
+            <div className="mb-3">
+              <label htmlFor="contactPhone" className="form-label">Phone</label>
+              <input
+                id="contactPhone"
+                name="phone"
+                className="form-control"
+                type="tel"
+                placeholder="e.g. +1 555-555-5555"
+                required
+                pattern="^[+0-9()\-\s]{6,30}$"
+                title="Please enter a valid phone number (digits, spaces, +, -, parentheses)."
+              />
             </div>
 
             <div className="mb-3">
