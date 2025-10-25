@@ -89,8 +89,9 @@ export default function About() {
                 <Card.Text>Request a quote or ask a product question — our sales team will respond quickly.</Card.Text>
                 <address className="small text-muted mb-2">
                   <strong>Vikas Piping and Fittings</strong><br />
-                  1601 Ohio Dr SW<br />
-                  Washington DC, 20004<br />
+                  1441 Lst NW<br />
+                  Suite 610<br />
+                  Washington DC, 20005<br />
                 </address>
                 <p className="mb-1 small">Phone: <strong><a className="text-decoration-none text-dark" href="tel:12028678692">202-867-8692</a></strong></p>
                 <p className="small">Email: <strong><a className="text-decoration-none text-dark" href="mailto:sales@vikaspipeandfittings.com">sales@vikaspipeandfittings.com</a></strong></p>
