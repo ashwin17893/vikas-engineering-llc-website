@@ -35,8 +35,8 @@ export default function Footer() {
             <h6 className="fw-bold">Contact</h6>
             <address className="small text-light">
               Vikas pipe and Fittings<br />
-              1601 Ohio Dr SW<br />
-              Washington DC, 20004<br />
+              1441 Lst NW Suite 610<br />
+              Washington DC, 20005<br />
             </address>
             <p className="mb-1 small">Phone: <a className="text-light" href="tel:+12028678692">202-867-8692</a></p>
             <p className="small">Email: <a className="text-light" href="mailto:sales@vikaspipeandfittings.com">sales@vikaspipeandfittings.com</a></p>
